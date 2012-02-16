@@ -7,9 +7,10 @@ Gem::Specification.new do |s|
   s.authors     = ['Andrew Radev']
   s.email       = ['andrey.radev@gmail.com']
   s.homepage    = 'http://github.com/AndrewRadev/random_files'
-  s.summary     = 'TODO'
+  s.summary     = 'Select random files'
   s.description = <<-D
-    TODO
+    Given a number N and a glob pattern, this scripts outputs a selection of N
+    random files from those, that match the glob.
   D
 
   s.add_development_dependency 'rspec', '>= 2.0.0'
