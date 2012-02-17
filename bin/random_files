@@ -4,7 +4,7 @@ $: << File.expand_path('../../lib', __FILE__)
 
 require 'random_files'
 
-if ARGV.count < 1 or ARGV.first !~ /^\d+$/
+if ARGV.count < 1 or ARGV.first !~ /^\d+/
   puts "USAGE: #{__FILE__} <number-of-files> [dir1, [dir2, [...]]]"
   exit(1)
 end

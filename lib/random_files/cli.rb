@@ -1,18 +1,26 @@
 module RandomFiles
   class Cli
-    def initialize(files, limit)
-      @files = files
-      @limit = limit
+    def initialize(files, count, size_limit)
+      @files      = files
+      @count      = count || files.count
+      @size_limit = size_limit
     end
 
     def select_files
       selected = []
+      total_size = 0
 
-      @limit.times do
+      @count.times do
         if @files.empty?
           break
         else
-          selected << pop_random_file
+          file = pop_random_file
+          size = File.size(file)
+
+          next if @size_limit and total_size + size > @size_limit
+
+          total_size += size
+          selected << file
         end
       end
 
