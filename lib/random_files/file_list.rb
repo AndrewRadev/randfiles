@@ -1,9 +1,9 @@
 module RandomFiles
-  class Cli
-    def initialize(files, count, size_limit)
+  class FileList
+    def initialize(files, options)
       @files      = files
-      @count      = count || files.count
-      @size_limit = size_limit
+      @count      = options.count || files.count
+      @size_limit = options.size_limit
     end
 
     def select_files
