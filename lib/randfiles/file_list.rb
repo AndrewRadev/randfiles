@@ -2,7 +2,7 @@ module Randfiles
   class FileList
     def initialize(files, options)
       @files      = files
-      @count      = options.count || files.count
+      @count      = options.max_count || files.count
       @size_limit = options.size_limit
     end
 

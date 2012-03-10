@@ -1,5 +1,6 @@
 require 'ostruct'
 require 'optparse'
+require 'find'
 require 'randfiles/version'
 
 module Randfiles
@@ -8,16 +9,17 @@ module Randfiles
 
     def initialize(args)
       @options = OpenStruct.new
-      @globs   = []
+      @dirs    = []
 
       parse_args(args)
     end
 
     def files
-      @globs.
-        map { |g| Dir[g] }.
-        flatten.
-        select { |f| File.file?(f) }
+      @dirs.map do |dir|
+        Find.find(dir).
+          reject { |f| File.directory? f }.
+          map    { |f| f.sub './', '' }
+      end.flatten
     end
 
     private
@@ -37,8 +39,8 @@ module Randfiles
         opts.on_tail('--version', 'Show version')         { puts Randfiles::VERSION ; exit }
       end
 
-      @globs = parser.permute(args)
-      @globs = ['*/**'] if @globs.empty?
+      @dirs = parser.permute(args)
+      @dirs = ['.'] if @dirs.empty?
     end
 
     def parse_size(size)
