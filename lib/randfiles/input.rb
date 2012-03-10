@@ -1,8 +1,8 @@
 require 'ostruct'
 require 'optparse'
-require 'random_files/version'
+require 'randfiles/version'
 
-module RandomFiles
+module Randfiles
   class Input
     attr_reader :options
 
@@ -24,7 +24,7 @@ module RandomFiles
 
     def parse_args(args)
       parser = OptionParser.new do |opts|
-        opts.banner = "Usage: random_files [options] [dir1, [dir2, [...]]]"
+        opts.banner = "Usage: randfiles [options] [dir1, [dir2, [...]]]"
 
         opts.on '-s', '--size-limit [SIZE]', 'Size limit for random file list. E.g. "400MB", "3GB"' do |size|
           @options.size_limit = parse_size(size)
@@ -33,8 +33,8 @@ module RandomFiles
           @options.max_count = count
         end
 
-        opts.on_tail('-h', '--help', 'Show this message') { puts opts                 ; exit }
-        opts.on_tail('--version', 'Show version')         { puts RandomFiles::VERSION ; exit }
+        opts.on_tail('-h', '--help', 'Show this message') { puts opts               ; exit }
+        opts.on_tail('--version', 'Show version')         { puts Randfiles::VERSION ; exit }
       end
 
       @globs = parser.permute(args)

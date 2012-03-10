@@ -1,4 +1,4 @@
-module RandomFiles
+module Randfiles
   class FileList
     def initialize(files, options)
       @files      = files

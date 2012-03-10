@@ -1,12 +1,12 @@
-require File.expand_path('../lib/random_files/version', __FILE__)
+require File.expand_path('../lib/randfiles/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = 'random_files'
-  s.version     = RandomFiles::VERSION
+  s.name        = 'randfiles'
+  s.version     = Randfiles::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Andrew Radev']
   s.email       = ['andrey.radev@gmail.com']
-  s.homepage    = 'http://github.com/AndrewRadev/random_files'
+  s.homepage    = 'http://github.com/AndrewRadev/randfiles'
   s.summary     = 'Select random files'
   s.description = <<-D
     Given a number N and a glob pattern, this scripts outputs a selection of N
@@ -17,9 +17,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake'
 
   s.required_rubygems_version = '>= 1.3.6'
-  s.rubyforge_project         = 'random_files'
+  s.rubyforge_project         = 'randfiles'
 
   s.files        = Dir['{lib}/**/*.rb', 'bin/*', 'LICENSE', '*.md']
   s.require_path = 'lib'
-  s.executables  = ['random_files']
+  s.executables  = ['randfiles']
 end

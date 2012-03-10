@@ -1,7 +1,7 @@
-require 'random_files/file_list'
-require 'random_files/input'
+require 'randfiles/file_list'
+require 'randfiles/input'
 
-module RandomFiles
+module Randfiles
   def self.run(argv)
     limit = argv.shift
 

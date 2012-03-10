@@ -1,0 +1,10 @@
+#! /usr/bin/env ruby
+
+$: << File.expand_path('../../lib', __FILE__)
+
+require 'randfiles'
+
+input     = Randfiles::Input.new(ARGV)
+file_list = Randfiles::FileList.new(input.files, input.options)
+
+puts file_list.select_files
