@@ -9,8 +9,9 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.com/AndrewRadev/randfiles'
   s.summary     = 'Select random files'
   s.description = <<-D
-    Given a number N and a glob pattern, this scripts outputs a selection of N
-    random files from those, that match the glob.
+    Given a set of random directories, this scripts outputs the files in them
+    in a random order. Combined with limitations by size or by number, this can
+    be used to pick a random collection of files from the given directories.
   D
 
   s.add_development_dependency 'rspec', '>= 2.0.0'
