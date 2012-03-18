@@ -25,6 +25,12 @@ If you're unfamiliar with xargs:
   - `-d'\n'` ensures that the items are delimited by newlines (there may be
     spaces in the file names)
 
+## Installation
+
+The project is available as a gem, so this should be enough:
+
+    gem install randfiles
+
 ## Todo
 
 - A `-0` option for easier piping
